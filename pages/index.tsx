@@ -32,52 +32,48 @@ const Home: NextPage = () => {
   const onSelectLocale = useCallback((e) => setLocale(e.target.value), [])
 
   return (
-    <div className={styles.container}>
+    <div className="min-h-screen bg-widget-dark flex flex-col items-center justify-center">
       <Head>
         <title>Uniswap Widgets</title>
         <meta name="description" content="Uniswap Widgets" />
         <link rel="icon" href="https://app.uniswap.org/favicon.png" />
       </Head>
 
-      <div className={styles.i18n}>
-        <label style={{ display: 'flex' }}>
+      <div className="absolute top-4 right-4">
+        <label className="flex items-center text-white gap-2">
           <FiGlobe />
+          <select 
+            onChange={onSelectLocale}
+            className="bg-widget-gray text-white rounded-lg px-3 py-1 text-sm border-none outline-none"
+          >
+            {SUPPORTED_LOCALES.map((locale) => (
+              <option key={locale} value={locale}>
+                {locale}
+              </option>
+            ))}
+          </select>
         </label>
-        <select onChange={onSelectLocale}>
-          {SUPPORTED_LOCALES.map((locale) => (
-            <option key={locale} value={locale}>
-              {locale}
-            </option>
-          ))}
-        </select>
       </div>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Uniswap Swap Widget</h1>
-
-        <div className={styles.demo}>
-          <div className={styles.connectors} ref={connectors} tabIndex={-1}>
-            <Web3Connectors />
-          </div>
-
-          <div className={styles.widget}>
-            <SwapWidget
-              jsonRpcEndpoint={JSON_RPC_URL}
-              tokenList={DEFAULT_TOKEN_LIST}
-              provider={provider}
-              locale={locale}
-              onConnectWallet={focusConnectors}
-              defaultInputTokenAddress="NATIVE"
-              defaultInputAmount="1"
-              defaultOutputTokenAddress={UNI}
-            />
-          </div>
+      <div className="w-full max-w-[400px] rounded-3xl bg-widget-gray/50 backdrop-blur-sm p-4 shadow-2xl">
+        <div className="mb-6" ref={connectors} tabIndex={-1}>
+          <Web3Connectors />
         </div>
 
-        <hr className={styles.rule} />
-
-        <DocumentationCards />
-      </main>
+        <div className="rounded-2xl overflow-hidden bg-widget-dark">
+          <SwapWidget
+            jsonRpcEndpoint={JSON_RPC_URL}
+            tokenList={DEFAULT_TOKEN_LIST}
+            provider={provider}
+            locale={locale}
+            onConnectWallet={focusConnectors}
+            defaultInputTokenAddress="NATIVE"
+            defaultInputAmount="1"
+            defaultOutputTokenAddress={UNI}
+            theme="dark"
+          />
+        </div>
+      </div>
     </div>
   )
 }
