@@ -23,7 +23,7 @@ function Connector({ web3Connector }: { web3Connector: Web3Connector }) {
     <div className="flex justify-center mb-2">
       <button
         onClick={onClick}
-        className="relative group bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-0.5 rounded-xl animate-gradient-x w-full max-w-[280px]"
+        className="relative group bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-0.5 rounded-xl w-full max-w-[280px]"
       >
         <div className="px-6 py-3 bg-widget-dark rounded-xl group-hover:bg-opacity-90 transition-all">
           <div className="flex items-center justify-center gap-3">
@@ -37,7 +37,7 @@ function Connector({ web3Connector }: { web3Connector: Web3Connector }) {
             </span>
           </div>
         </div>
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl blur opacity-50 group-hover:opacity-75 transition-all"></div>
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl blur opacity-0 group-hover:opacity-50 transition-all"></div>
       </button>
     </div>
   )
