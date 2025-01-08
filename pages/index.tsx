@@ -13,8 +13,8 @@ import Web3Connectors from '../components/Web3Connectors'
 import { useActiveProvider } from '../connectors'
 import { useCallback, useRef, useState } from 'react'
 import { JSON_RPC_URL } from '../constants'
+import { DEFAULT_TOKEN_LIST } from '../config/tokens'
 
-const TOKEN_LIST = 'https://gateway.ipfs.io/ipns/tokens.uniswap.org'
 const UNI = '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984'
 
 const Home: NextPage = () => {
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
           <div className={styles.widget}>
             <SwapWidget
               jsonRpcEndpoint={JSON_RPC_URL}
-              tokenList={TOKEN_LIST}
+              tokenList={DEFAULT_TOKEN_LIST}
               provider={provider}
               locale={locale}
               onConnectWallet={focusConnectors}
