@@ -44,40 +44,6 @@ const nextConfig = {
     loader: 'cloudinary',
     path: 'https://res.cloudinary.com/sushi-cdn/image/fetch/',
   },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/swap',
-        permanent: true,
-      },
-      {
-        source: '/home',
-        destination: '/swap',
-        permanent: true,
-      },
-      {
-        source: '/borrow',
-        destination: '/kashi',
-        permanent: true,
-      },
-      {
-        source: '/lend',
-        destination: '/kashi',
-        permanent: true,
-      },
-      {
-        source: '/inari',
-        destination: '/tools/inari',
-        permanent: true,
-      },
-      {
-        source: '/bento/balances',
-        destination: '/account',
-        permanent: true,
-      }
-    ]
-  },
   async rewrites() {
     return [
       {

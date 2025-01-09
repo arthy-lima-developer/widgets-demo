@@ -1,0 +1,13 @@
+{
+  "connect": "Connect Wallet",
+  "swap": "Swap",
+  "settings": "Settings",
+  "select_token": "Select a token",
+  "amount": "Amount",
+  "balance": "Balance",
+  "review": "Review",
+  "confirm": "Confirm",
+  "cancel": "Cancel",
+  "error": "Error",
+  "success": "Success"
+} 

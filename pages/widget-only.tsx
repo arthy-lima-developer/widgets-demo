@@ -35,7 +35,7 @@ const WidgetOnly: NextPage = () => {
       <div className="rounded-2xl overflow-hidden bg-widget-gray/50 backdrop-blur-sm p-4 shadow-2xl">
         <h2 className="text-white text-xl mb-4 text-center">SushiSwap</h2>
         <iframe 
-          src="http://localhost:3001/widget-only"
+          src="http://localhost:3001/swap?inputCurrency=0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d&outputCurrency=0x38eeff6a964ac441b900deb6bf25c85be85a32a0"
           className="w-[360px] h-[600px] border-0"
           title="SushiSwap Interface"
         />
